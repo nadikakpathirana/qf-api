@@ -158,7 +158,7 @@ exports.search_fns = (req, res, next) => {
                 const response = {
                     status: true,
                     count: docs.length,
-                    services: docs.map(doc => {
+                    fns: docs.map(doc => {
                         return {
                             _id: doc._id,
                             title: doc.title,
@@ -217,7 +217,7 @@ exports.get_all_fns_of_a_category = (req, res, next) => {
                 const response = {
                     status: true,
                     count: docs.length,
-                    services: docs.map(doc => {
+                    fns: docs.map(doc => {
                         return {
                             _id: doc._id,
                             title: doc.title,

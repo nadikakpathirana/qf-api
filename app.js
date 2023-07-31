@@ -9,6 +9,7 @@ const FurnitureRouters = require('./api/routes/furniture-routes');
 const CategoryRouters = require('./api/routes/category-routes');
 const ReviewRouters = require('./api/routes/review-routes');
 const CartRouters = require('./api/routes/cart-routes');
+const OrderRouters = require('./api/routes/order-routes');
 
 app.use(morgan('dev'));
 app.use('/api/uploads', express.static('uploads'));
@@ -53,6 +54,7 @@ app.use('/api/fns', FurnitureRouters);
 app.use('/api/categories', CategoryRouters);
 app.use('/api/review', ReviewRouters);
 app.use('/api/cart', CartRouters);
+app.use('/api/order', OrderRouters);
 
 //default url
 app.use((req, res, next) => {
