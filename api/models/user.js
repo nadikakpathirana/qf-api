@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema({
     phoneNumber: { type: String, required: false},
     userType: { type: String, default: "buyer", required: false},
     isAdmin: {type: Boolean, default: false, required: false},
-    isEmailVerified: {type: Boolean, default: false, required: false},
+    isEmailVerified: {type: Boolean, default:true, required: false},
     previous_search_keys: { type: Array, required: false},
 
 })

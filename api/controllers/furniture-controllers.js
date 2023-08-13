@@ -568,6 +568,7 @@ exports.get_specific_fn = (req, res, next) => {
                         })
                     }
                 });
+                
             } else {
                 res.status(404).json({status: false, message: 'fn_empty'})
             }

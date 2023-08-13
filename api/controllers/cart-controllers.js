@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const Cart = require("../models/cart");
+const { error } = require("shelljs");
 
 function calculate_age(dob) {
     try {
@@ -16,6 +17,7 @@ function calculate_age(dob) {
 // get cart list of a buyer
 exports.get_cart_items_of_a_buyer = (req, res, next) => {
     const userID = req.params.userID;
+    console.log(userID)
     Cart.find({"buyer": userID}).populate('buyer').populate('furniture')
         .exec()
         .then(docs => {
@@ -43,11 +45,13 @@ exports.get_cart_items_of_a_buyer = (req, res, next) => {
                 res.status(200).json(response);
             } else {
                 res.status(200).json({status: false, error: 'cart_empty'});
+                console.log(error)
             }
         })
         .catch(err => {
+            console.log(err)
             res.status(500).json({
-                error: err
+                error: err     
             })
         })
 }
